@@ -1,64 +1,19 @@
-const GENDER = {
-    MASCULINE: 'MASCULINE',
-    FEMININE: 'FEMININE',
-    NEUTER: 'NEUTER'
-};
+const { GENDER } = require('./constants');
+const rank1 = require('./rank-1');
+const ten2 = require('./ten-2');
+const rank2 = require('./rank-2');
 
-const top20Roots = [
-    'перв',
-    'втор',
-    'трет',
-    'четверт',
-    'пят',
-    'шест',
-    'седьм',
-    'восьм',
-    'девят'
-];
-
-const top9 = {
-    getEnd(n, gender){
-        switch (gender) {
-            case GENDER.MASCULINE:{
-                switch (n) {
-                    case 1:
-                    case 4:
-                    case 5:
-                    case 9:
-                        return 'ый';
-                    case 2:
-                    case 6:
-                    case 7:
-                    case 8:
-                        return 'ой';
-                    case 3:
-                        return 'ий';
-                }
-            }
-            case GENDER.FEMININE:{
-                if(n === 3){
-                    return 'ья';
-                }else{
-                    return 'ая';
-                }
-            }
-            case GENDER.NEUTER:{
-                if(n === 3){
-                    return 'ье';
-                }else{
-                    return 'ое';
-                }
-            }
-        }
-    },
-    getRoot(n){
-        return top20Roots[n-1];
-    }
+const rank2OrderNumeral = (n, gender) => {
+    rank2.orderNumeral(n, gender, rank1.orderNumeral);
 };
 
 function orderNumeral(n, gender){
     if(n >= 1 && n < 10){
-        return top9.getRoot(n) + top9.getEnd(n, gender);
+        return rank1.orderNumeral(n, gender);
+    }else if(n >= 10 && n < 20){
+        return ten2.orderNumeral(n, gender);
+    }else if( n >= 20 && n < 100){
+        return rank2OrderNumeral(n, gender);
     }
 }
 

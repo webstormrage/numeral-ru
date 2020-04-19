@@ -1,4 +1,5 @@
-const {orderNumeral, GENDER} = require('../index');
+const { GENDER } = require('../constants');
+const { orderNumeral } = require('../rank-1');
 
 describe('Порядковое числительное от 1 до 9', () => {
 
