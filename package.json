@@ -1,0 +1,20 @@
+{
+  "name": "numeral-ru",
+  "version": "0.0.2",
+  "description": "Package for rendering numerals from number and grammar gender. Only russian is supported.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "webstormrage",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webstormrage/numeral-ru.git"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.9.5",
+    "jest": "^25.3.0"
+  }
+}
