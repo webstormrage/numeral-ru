@@ -17,15 +17,7 @@ const rank3OrderNumeral = (n, gender) => {
 };
 
 function orderNumeral(n, gender){
-    if(n >= 1 && n < 10){
-        return rank1.orderNumeral(n, gender);
-    }else if(n >= 10 && n < 20){
-        return ten2OrderNumeral(n, gender);
-    }else if( n >= 20 && n < 100){
-        return rank2OrderNumeral(n, gender);
-    }else if(n >= 100 && n < 1000){
-        return rank3OrderNumeral(n, gender);
-    }
+    return rank3OrderNumeral(n, gender);
 }
 
 module.exports = {

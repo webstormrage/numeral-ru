@@ -51,6 +51,7 @@ describe('Порядковое числительное десятки', () => {
 
     it('Меньшие 20', () => {
         expect(orderNumeral(19, GENDER.NEUTER, mockRank)).toBe('19 NEUTER');
+        expect(orderNumeral(10, GENDER.NEUTER, mockRank)).toBe('10 NEUTER');
     });
 
 });
