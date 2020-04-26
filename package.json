@@ -1,6 +1,6 @@
 {
   "name": "numeral-ru",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Package for rendering numerals from number and grammar gender. Only russian is supported.",
   "main": "index.js",
   "scripts": {
