@@ -46,6 +46,8 @@ function getEnd(gender){
 function orderNumeral(n, gender, lowOrderNumeral){
     if (n % 100 === 0) {
         return getRoot(n) + getEnd(gender);
+    } else if(n < 100){
+        return lowOrderNumeral(n % 100, gender);
     } else {
         return getInfinitive(n - n % 100) + ' ' + lowOrderNumeral(n % 100, gender);
     }

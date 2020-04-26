@@ -49,4 +49,8 @@ describe('Порядковое числительное десятки', () => {
         expect(orderNumeral(91, GENDER.NEUTER, mockRank)).toBe('девяносто 1 NEUTER');
     });
 
+    it('Меньшие 20', () => {
+        expect(orderNumeral(19, GENDER.NEUTER, mockRank)).toBe('19 NEUTER');
+    });
+
 });

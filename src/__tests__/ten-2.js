@@ -1,6 +1,8 @@
 const { GENDER } = require('../constants');
 const { orderNumeral } = require('../ten-2');
 
+const mockRank = (n, gender) => `${n} ${gender}`;
+
 describe('Порядковое числительное от 10 до 19', () => {
 
     it('Мужской род', () => {
@@ -40,6 +42,10 @@ describe('Порядковое числительное от 10 до 19', () => 
         expect(orderNumeral(17, GENDER.NEUTER)).toBe( 'семнадцатое');
         expect(orderNumeral(18, GENDER.NEUTER)).toBe( 'восемнадцатое');
         expect(orderNumeral(19, GENDER.NEUTER)).toBe( 'девятнадцатое');
+    });
+
+    it('Меньшие 10', () => {
+        expect(orderNumeral(9, GENDER.NEUTER, mockRank)).toBe('9 NEUTER');
     });
 
 });

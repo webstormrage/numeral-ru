@@ -53,4 +53,8 @@ describe('Порядковое числительное сотни', () => {
         expect(orderNumeral(901, GENDER.NEUTER, mockRank)).toBe('девятьсот 1 NEUTER');
     });
 
+    it('Меньшие 100', () => {
+        expect(orderNumeral(99, GENDER.NEUTER, mockRank)).toBe('99 NEUTER');
+    });
+
 });

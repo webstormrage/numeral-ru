@@ -62,6 +62,8 @@ function getRoot(n){
 function orderNumeral(n, gender, lowOrderNumeral){
     if (n % 10 === 0) {
         return getRoot(n) + getEnd(n, gender);
+    }else if( n < 20){
+        return lowOrderNumeral(n, gender);
     } else {
         return getInfinitive(n - n % 10) + ' ' + lowOrderNumeral(n % 10, gender);
     }

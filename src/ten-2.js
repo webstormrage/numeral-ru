@@ -28,7 +28,10 @@ function getEnd(gender){
     }
 }
 
-function orderNumeral(n, gender){
+function orderNumeral(n, gender, lowerOrderNumeral){
+    if(n < 10){
+        return lowerOrderNumeral(n, gender);
+    }
     return getRoot(n) + getEnd(gender);
 }
 
